@@ -13,7 +13,7 @@ Make sure you have installed the [Microsoft Interop Forms Toolkit 2.1](http://ms
 
 # Download and Unzip
 
-Download the templates zip file and unzip it into your Visual Studio Templates folder (e.g., C:\Users\username\My Documents\Visual Studio 2010\Templates). This should add the following files:
+Download the [templates zip file](https://github.com/froque/interoptoolkitcs/releases/latest) and unzip it into your Visual Studio Templates folder (e.g., C:\Users\username\My Documents\Visual Studio 2010\Templates). This should add the following files:
  * ItemTemplates\Visual C#\CSInteropUserControlItemTemplate.zip
  * ProjectTemplates\Visual C#\Windows\CSInteropUserControlProjectTemplate.zip
 
