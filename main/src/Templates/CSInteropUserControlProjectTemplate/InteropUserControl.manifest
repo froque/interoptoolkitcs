@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- You don't need to worry about anything in this file unless you're
+     using registration-free COM.
+     There should be an appropriate <clrclass> section for every InteropUserControl
+     defined in the project -->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" 
+  manifestVersion="1.0">
+<assemblyIdentity
+            type="win32"
+            name="$projectname$"
+            version="1.0.0.0" />
+<clrClass
+            clsid="{$guid2$}"
+            progid="$projectname$.InteropUserControl"
+            threadingModel="Both"
+            name="$projectname$.InteropUserControl" >
+</clrClass>
+</assembly>

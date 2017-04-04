@@ -1,0 +1,29 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>VB6 Interop UserControl</Name>
+    <Description>A project for exposing .Net functionality to VB6 through a C# UserControl</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType></ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>InteropUserControlLibrary</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WindowsControlLibrary.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true">ActiveXControlHelpers.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">InteropUserControl.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">InteropUserControl.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false">InteropUserControl.rc</ProjectItem>
+      <ProjectItem ReplaceParameters="false">InteropUserControl.bmp</ProjectItem>
+      <ProjectItem ReplaceParameters="true">InteropUserControl.manifest</ProjectItem>
+      <ProjectItem ReplaceParameters="false">InteropUserControl.res</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

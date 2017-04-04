@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <DefaultName>InteropUserControl.cs</DefaultName>
+    <Name>VB6 Interop UserControl</Name>
+    <Description>C Sharp UserControl to expose .NET functionality to VB6</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="UserControl" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">InteropUserControl.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.Designer.cs" ReplaceParameters="true">InteropUserControl.Designer.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

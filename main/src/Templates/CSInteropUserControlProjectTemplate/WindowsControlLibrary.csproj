@@ -1,0 +1,98 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>$guid5$</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>$safeprojectname$</RootNamespace>
+    <AssemblyName>$safeprojectname$</AssemblyName>
+    <TargetFrameworkVersion>v$targetframeworkversion$</TargetFrameworkVersion>
+    $if$ ($targetframeworkversion$ >= 3.5)
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    $endif$
+    <FileAlignment>512</FileAlignment>
+    <Win32Resource>InteropUserControl.RES</Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;COM_INTEROP_ENABLED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;COM_INTEROP_ENABLED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    $if$ ($targetframeworkversion$ >= 3.5)
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Xml.Linq"/>
+    <Reference Include="System.Data.DataSetExtensions"/>
+    $endif$
+    $if$ ($targetframeworkversion$ >= 4.0)
+    <Reference Include="Microsoft.CSharp"/>
+    $endif$
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.InteropFormTools" />
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveXControlHelpers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InteropUserControl.cs">
+    </Compile>
+    <Compile Include="InteropUserControl.Designer.cs">
+      <DependentUpon>InteropUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InteropUserControl.bmp" />
+    <Content Include="InteropUserControl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InteropUserControl.manifest" />
+    <None Include="InteropUserControl.res" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>@echo.
+set RCDIR=
+IF EXIST "$(FrameworkSDKDir)Bin\rc.exe" (set RCDIR="$(FrameworkSDKDir)Bin\rc.exe")
+IF EXIST "$(DevEnvDir)..\..\VC\Bin\rc.exe" (set RCDIR="$(DevEnvDir)..\..\VC\Bin\rc.exe")
+IF EXIST "$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe" (set RCDIR="$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe")
+IF EXIST "$(DevEnvDir)..\..\SDK\v3.5\Bin\rc.exe" (set RCDIR="$(DevEnvDir)..\..\SDK\v3.5\Bin\rc.exe")
+IF EXIST "$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0a\bin\rc.exe" (set RCDIR="$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0a\bin\rc.exe")
+IF EXIST "$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v7.0a\bin\rc.exe" (set RCDIR="$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v7.0a\bin\rc.exe")
+if not defined RCDIR (echo "Warning!  Unable to find rc.exe, using default manifest instead.") ELSE (%25RCDIR%25 /r "$(ProjectDir)InteropUserControl.rc")
+if not defined RCDIR (Exit 0)
+@echo.</PreBuildEvent>
+  </PropertyGroup>
+</Project>
