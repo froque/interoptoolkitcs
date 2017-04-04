@@ -23,4 +23,4 @@ Note: Do not unzip these individual zip files!
 
 Launch Visual Studio 2010 as an administrator, and then start a new project. In the New Project dialog, navigate to Installed Templates > Visual C# > Windows, and select the VB6 Interop UserControl template from the list.
 
-For more details, read the Documentation page.
+For more details, read the [Documentation](https://github.com/froque/interoptoolkitcs/wiki) page.
